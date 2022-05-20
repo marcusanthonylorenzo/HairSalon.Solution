@@ -25,5 +25,19 @@ namespace HairSalon.Controllers
     {
       return View();
     }
+
+    //instantiate new stylist, auto increments Id, adds to _db
+    [HttpPost]
+    public ActionResult Add(Stylist stylist)
+    {
+      _db.Stylists.Add(stylist);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+    public ActionResult Details(int id)
+    {
+      Stylist currentStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
+      return View(currentStylist);
+    }
   }
 }

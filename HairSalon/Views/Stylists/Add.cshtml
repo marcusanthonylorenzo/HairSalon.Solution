@@ -1,8 +1,19 @@
 @{
   Layout = "_Layout";
 }
+@model HairSalon.Models.Stylist
 
 <h2>Add a new stylist here:</h2>
+
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.Name)
+  @Html.TextBoxFor(model => model.Name)
+
+  @Html.LabelFor(model => model.Skill);
+  @Html.TextBoxFor(model => model.Skill)
+  <input type="submit" value="submit stylist" />
+}
 
 <p>@Html.ActionLink("Back to Stylists Page", "Index")</p>
 <p>@Html.ActionLink("Back to Main Page", "Index", "Home")</p>

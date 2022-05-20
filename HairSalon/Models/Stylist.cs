@@ -1,5 +1,5 @@
-
 using System.Collections.Generic;
+using HairSalon.Models;
 
 namespace HairSalon.Models
 {
@@ -7,10 +7,13 @@ namespace HairSalon.Models
   {
     public Stylist()
     {
-      this.Clients = new HashSet<Client>();
+      this.ClientList = new HashSet<Client>();
     }
     public int StylistId { get; set; }
     public string Name { get; set; }
-    public virtual ICollection<Client> Clients { get; set; }
+
+    //this is their specialty e.g. "Color", "Womens hair", "Mens hair", "Curly", etc.
+    public string Skill { get; set; }
+    public virtual ICollection<Client> ClientList { get; set; }
   }
 }
