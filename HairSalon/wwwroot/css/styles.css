@@ -1,0 +1,11 @@
+body {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+.index, .options {
+  display: flex;
+  flex-direction: column;
+  margin: 3vw;
+}

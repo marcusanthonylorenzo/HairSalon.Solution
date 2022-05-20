@@ -7,19 +7,25 @@
 
 
 <h3>Name: @Html.DisplayFor(model => model.Name)</h3>
-<h4>Employee ID: @Html.DisplayFor(model => model.StylistId)</h4>
-<h4>Speciality/Skill: @Html.DisplayFor(model => model.Skill)</h4>
+
+<div class="index" id="employee-details">
+  <h4>Employee ID: @Html.DisplayFor(model => model.StylistId)</h4>
+  <h4>Speciality/Skill: @Html.DisplayFor(model => model.Skill)</h4>
+</div>
 
 <h4>Current clients:</h4>
-@if (Model.ClientList.Count == 0)
-{
-  <h4>@Html.DisplayFor(model => model.Name) has no clients assigned at the moment.</h4>
-}
 
-@foreach (Client client in Model.ClientList)
-{
-  <h4>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</h4>
-}
+<div class="index" id="client-list">
+  @if (Model.ClientList.Count == 0)
+  {
+    <h4>@Html.DisplayFor(model => model.Name) has no clients assigned at the moment.</h4>
+  }
+
+  @foreach (Client client in Model.ClientList)
+  {
+    <h4>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</h4>
+  }
+</div>
 
 <p>@Html.ActionLink("Add a new client.", "AddClient")</p>
 <p>@Html.ActionLink("Back to Stylists Page", "Index")</p>

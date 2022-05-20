@@ -3,13 +3,18 @@
   Layout = "_Layout";
 }
 
-<h1>Welcome to Eau Claire's Salon - Online Management System</h1>
-<h2>Main Page</h2>
 
-<h3>Select below to:</h3>
+  <h1>Welcome to Eau Claire's Salon - Online Management System</h1>
+  <h2>Main Page</h2>
 
-<h5>See stylists:</h5>
-<p>@Html.ActionLink("View Stylists Page.", "Index", "Stylists")</p>
+<div class="index" id="home">
+  <h4>Select below to:</h4>
 
-<h5>Add Client to Stylist:</h5>
-<p>@Html.ActionLink("Add Client", "Index", "Clients")</p>
+  <div class="options">
+    <h5>Stylists:</h5>
+    <p>@Html.ActionLink("View Stylists Page.", "Index", "Stylists")</p>
+
+    <h5>Clients:</h5>
+    <p>@Html.ActionLink("View Clients Page", "Index", "Clients")</p>
+  </div>
+</div>

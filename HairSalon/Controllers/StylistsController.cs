@@ -39,5 +39,10 @@ namespace HairSalon.Controllers
       Stylist currentStylist = _db.Stylists.FirstOrDefault(stylist => stylist.StylistId == id);
       return View(currentStylist);
     }
+
+    public ActionResult AddClient()
+    {
+      return RedirectToAction("Add", "Clients");
+    }
   }
 }

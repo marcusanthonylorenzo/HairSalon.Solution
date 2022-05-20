@@ -15,5 +15,6 @@ namespace HairSalon.Models
     //this is their specialty e.g. "Color", "Womens hair", "Mens hair", "Curly", etc.
     public string Skill { get; set; }
     public virtual ICollection<Client> ClientList { get; set; }
+
   }
 }
