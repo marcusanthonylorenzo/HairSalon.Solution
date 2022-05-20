@@ -44,5 +44,21 @@ namespace HairSalon.Controllers
     {
       return RedirectToAction("Add", "Clients");
     }
+    
+    public ActionResult SelectStylist()
+    {
+  
+      return View();
+    }
+    
+
+    [HttpPost]
+    public ActionResult SelectStylistPost(Client client, int id)
+    {
+      var selectedStylist = _db.Stylists.FirstOrDefault(styler => styler.StylistId == id);
+      _db.Clients.Add(client);
+      return View(selectedStylist);
+    }
+  
   }
 }

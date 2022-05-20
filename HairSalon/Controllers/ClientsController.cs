@@ -8,16 +8,16 @@ namespace HairSalon.Controllers
 {
   public class ClientsController : Controller
   {
-    private readonly HairSalonContext _db;
+    private readonly HairSalonContext _db1;
 
-    public ClientsController(HairSalonContext db)
+    public ClientsController(HairSalonContext dbClient)
     {
-      _db = db;
+      _db1 = dbClient;
     }
 
      public ActionResult Index()
     {
-      List<Client> model = _db.Clients.Include(client =>  client.Stylist).ToList();
+      List<Client> model = _db1.Clients.Include(client =>  client.Stylist).ToList();
       return View(model);
     }
 
@@ -29,17 +29,10 @@ namespace HairSalon.Controllers
     [HttpPost]
     public ActionResult Add(Client client)
     {
-      _db.Clients.Add(client);
-      _db.SaveChanges();
-      return RedirectToAction("SelectStylist");
+      _db1.Clients.Add(client);
+      _db1.SaveChanges();
+      return RedirectToAction("SelectStylist", "Stylists");
     }
-
-    public ActionResult SelectStylist()
-    {
-      List<Stylist> fetchStylists = _db.Stylists.ToList();
-      return View(fetchStylists);
-    }
-
   }
 }
 
