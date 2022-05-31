@@ -50,7 +50,7 @@ namespace HairSalon.Controllers
     {
       // var selectedStylist = _db.Stylists.FirstOrDefault(styler => styler.StylistId == stylistIdNew);
       ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
-      return RedirectToAction("Index");
+      return RedirectToAction("Index", "Home");
     }
   
 

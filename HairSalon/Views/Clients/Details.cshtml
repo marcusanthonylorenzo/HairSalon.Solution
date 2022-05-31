@@ -7,15 +7,9 @@
 
 
 <h3>Name: @Html.DisplayFor(model => model.Name)</h3>
+<h3> Stylist: </h3>
+  <h5>@Html.DisplayFor(model => model.Stylist)</h5></li>
 
-@using (Html.BeginForm())
-{
-
-  @Html.LabelFor(model => model.Stylist)
-  <h4>Select </h4>@Html.DropDownList("StylistId")
-
-  <input type="submit" value="Add Stylist" />
-}
 
 <p>@Html.ActionLink("Add a new client.", "Add")</p>
 <p>@Html.ActionLink("Back to Client List Page", "Index")</p>

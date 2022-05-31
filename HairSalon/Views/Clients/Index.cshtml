@@ -3,7 +3,6 @@
 }
 
 @using HairSalon.Models;
-@* @model HairSalon.Models; *@
 
 <h1>Client summary:</h1>
 
@@ -16,7 +15,10 @@
   <ul>
     @foreach(Client client in Model)
     {
+      @if (@client.StylistId != 0)
+      {
       <li>@Html.ActionLink($"{client.Name}", "Details", new { id = client.ClientId })</li>
+      }
     }
   </ul>
 
