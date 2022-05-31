@@ -1,0 +1,19 @@
+@{
+  Layout = "_Layout";
+}
+
+@using HairSalon.Models;
+@model HairSalon.Models.Client
+
+
+<h3>Name: @Html.DisplayFor(model => model.Name)</h3>
+@* 
+<div class="index" id="employee-details">
+  
+  <h4>Current Stylist: @Html.DisplayFor(model => model.Name)</h4>
+  <h4>stylist: @Html.DisplayFor(model => model.StylistId)</h4>
+</div> *@
+
+<p>@Html.ActionLink("Add a new client.", "Add")</p>
+<p>@Html.ActionLink("Back to Stylists Page", "Index")</p>
+<p>@Html.ActionLink("Back to Main Page", "Index", "Home")</p>
